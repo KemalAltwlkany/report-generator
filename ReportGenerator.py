@@ -1,8 +1,4 @@
 import sys
-from fpdf import FPDF
-from datetime import date
-from datetime import datetime
-import json as json
 import os as os
 
 # setup path variables
@@ -12,7 +8,13 @@ from TestReport import TestReport
 
 
 
-class ReportGenerator():
+class ReportGenerator:
+    """
+    A wrapper around the fpdf class and the TestReport class. This enables to generate multiple reports at once,
+    while the class TestReport is used to generate a single report. In this class I process all the data, such as
+    check the query (which tests do I want to generate a pdf for), and then simply pass those results to the
+    TestReport class.
+    """
     rel_path = "/home/kemal/Programming/Python/Articulation/Tests/test_results_raw"
     save_folder_rel_path = "/home/kemal/Programming/Python/ReportGenerator/Reports"
     # this is where all test results are located. (the raw data, .txt and .png)
@@ -78,8 +80,8 @@ class ReportGenerator():
 
 
 if __name__ == '__main__':
-    #x = ReportGenerator(reportType="new", alg_family="LS", alg_name="LS_apriori", problem_name="BK1")
-    #x = ReportGenerator(reportType="new", alg_family="TS", alg_name="TS_apriori", problem_name="BK1")
+    # x = ReportGenerator(reportType="new", alg_family="LS", alg_name="LS_apriori", problem_name="BK1")
+    # x = ReportGenerator(reportType="new", alg_family="TS", alg_name="TS_apriori", problem_name="BK1")
     # x = ReportGenerator(reportType="new", alg_family="TS", alg_name="TS_apriori", problem_name="IM1")
     x = ReportGenerator(reportType="new", alg_family="TS", alg_name="TS_apriori", problem_name="BK1")
     x.setupVariables()
