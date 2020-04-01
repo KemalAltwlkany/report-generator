@@ -51,7 +51,7 @@ class ReportGenerator:
         if self.reportType is "latest":
             # Reports have a unique ID. The latest report has the highest ID value.
             entries = os.listdir(self.load_folder)
-            test_ID = len(entries) // 2
+            test_ID = len(entries) // 2 - 1
             self.file_names.append(self.problem_name + "_test_ID_" + str(test_ID))
         elif self.reportType is "all":
             entries = os.listdir(self.load_folder)
@@ -82,8 +82,16 @@ class ReportGenerator:
 if __name__ == '__main__':
     # x = ReportGenerator(reportType="new", alg_family="LS", alg_name="LS_apriori", problem_name="BK1")
     # x = ReportGenerator(reportType="new", alg_family="TS", alg_name="TS_apriori", problem_name="BK1")
+    
+    # TS_apriori, IM1
     # x = ReportGenerator(reportType="new", alg_family="TS", alg_name="TS_apriori", problem_name="IM1")
-    x = ReportGenerator(reportType="new", alg_family="TS", alg_name="TS_apriori", problem_name="BK1")
+
+    # TS_apriori, BK1
+    # x = ReportGenerator(reportType="latest", alg_family="TS", alg_name="TS_apriori", problem_name="BK1")
+
+    # TS_apriori, SCH1
+    x = ReportGenerator(reportType="new", alg_family="TS", alg_name="TS_apriori", problem_name="SCH1")
+    
     x.setupVariables()
     x.generateReports()
 
