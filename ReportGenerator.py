@@ -84,14 +84,20 @@ if __name__ == '__main__':
     # x = ReportGenerator(reportType="new", alg_family="TS", alg_name="TS_apriori", problem_name="BK1")
     
     # TS_apriori, IM1
-    # x = ReportGenerator(reportType="new", alg_family="TS", alg_name="TS_apriori", problem_name="IM1")
+    #x = ReportGenerator(reportType="new", alg_family="TS", alg_name="TS_apriori", problem_name="IM1")
 
     # TS_apriori, BK1
-    # x = ReportGenerator(reportType="latest", alg_family="TS", alg_name="TS_apriori", problem_name="BK1")
+    #x = ReportGenerator(reportType="new", alg_family="TS", alg_name="TS_apriori", problem_name="BK1")
 
     # TS_apriori, SCH1
-    x = ReportGenerator(reportType="new", alg_family="TS", alg_name="TS_apriori", problem_name="SCH1")
-    
+    #x = ReportGenerator(reportType="new", alg_family="TS", alg_name="TS_apriori", problem_name="SCH1")
+ 
+    # TS_apriori, FON
+    #x = ReportGenerator(reportType="new", alg_family="TS", alg_name="TS_apriori", problem_name="FON")
+     
+    # TS_apriori, FON
+    x = ReportGenerator(reportType="new", alg_family="TS", alg_name="TS_apriori", problem_name="TNK")   
+
     x.setupVariables()
     x.generateReports()
 
