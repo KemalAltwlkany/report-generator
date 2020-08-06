@@ -95,8 +95,11 @@ if __name__ == '__main__':
     # TS_apriori, FON
     #x = ReportGenerator(reportType="new", alg_family="TS", alg_name="TS_apriori", problem_name="FON")
      
-    # TS_apriori, FON
-    x = ReportGenerator(reportType="new", alg_family="TS", alg_name="TS_apriori", problem_name="TNK")   
+    # TS_apriori, TNK
+    #x = ReportGenerator(reportType="new", alg_family="TS", alg_name="TS_apriori", problem_name="TNK")   
+
+    # TS_apriori, OSY
+    x = ReportGenerator(reportType="new", alg_family="TS", alg_name="TS_apriori", problem_name="OSY")   
 
     x.setupVariables()
     x.generateReports()
