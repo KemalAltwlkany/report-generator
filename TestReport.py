@@ -74,13 +74,15 @@ class TestReport(FPDF):
         # Page number
         self.cell(0, 10, 'Page ' + str(self.page_no()) + '/{nb}', 0, 0, 'C')
 
-    def add_image(self):
-        if not os.path.exists(self.raw_data_folder):
-            os.makedirs(self.raw_data_folder)
+    # This could be a lot cleaner but to save time as a requirement the image location path needs to be passed
+    # as an additional argument to this method.
+    def add_image(self, image_location):
+        if not os.path.exists(image_location):
+            os.makedirs(image_location)
         try:
-            os.chdir(self.raw_data_folder)
+            os.chdir(image_location)
         except OSError:
-            print('Could not cwd to: ', self.raw_data_folder)
+            print('Could not cwd to: ', image_location)
             print('Exiting.')
             sys.exit(2)
         self.image(self.file_name + '.png', x=45, w=115)
